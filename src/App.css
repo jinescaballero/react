@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "StyleScript";
+  src: url("./assets/font/StyleScript-Regular.ttf");
+}
+
 .App {
   text-align: center;
 }
