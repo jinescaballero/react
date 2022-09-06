@@ -1,0 +1,13 @@
+header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img{
+    width: 12%;
+}
+
+a{
+    padding: 10px;
+}
