@@ -1,16 +1,24 @@
 
 import React from "react";
-import Header from "./Components/Header/Header"
-import MiComponente from "./MiComponente.js"
-import Usuarios from "./Usuarios.js"
+import NavBar from "./Components/NavBar/NavBar"
+import ItemListContainer from "./Containers/ItemListContainer/ItemListContainer";
+import MiComponente from "./MiComponente";
+import Usuarios from "./Usuarios";
 
 const App =() => { 
-  const nombre= "Ines";
+  const dash = "Dona un pedacito de Alegria a quienes mas lo necesitan";
+
+  const onAdd = (count) => {
+    console.log("Un mensaje");
+  }
+
+
   return (
     <>
-    <Header nombre={nombre} />
- {/*    <MiComponente/>
-    <Usuarios/> */}
+      <NavBar />
+      <ItemListContainer greeting={dash}/>
+      <MiComponente stock={5} onAdd={onAdd}/>
+      <Usuarios/> 
     </>
   )
 }

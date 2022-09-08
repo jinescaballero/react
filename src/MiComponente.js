@@ -1,12 +1,10 @@
 import React,{useState} from 'react'
 
-const MiComponente =({}) => {
+const MiComponente =({stock,funcion}) => {
     
 
 const [contador,setContador]=useState(0);
-const [name,setName] =useState('')
-const [users,setUsers] =useState([])
-const [user,setUser] =useState({})
+
 
     const sumar =() => {
         setContador(contador +1);
