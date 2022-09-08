@@ -17,9 +17,9 @@ const App =() => {
     <>
       <NavBar />
       <ItemListContainer greeting={dash}/>
-      <MiComponente stock={5} onAdd={onAdd}/>
+      {/* <MiComponente stock={5} onAdd={onAdd}/>
       <Usuarios/> 
-    </>
+ */}    </>
   )
 }
 export default App;
