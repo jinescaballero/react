@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const ItemListContainer = ({greeting}) => {
   return (
-    <h1  style={styles.container}>{greeting}</h1>
-    
+
+      <h1  style={styles.container}>{greeting}</h1>
   )
 }
 
@@ -14,5 +15,6 @@ const styles ={
   }
   
 }
+
 
 export default ItemListContainer
