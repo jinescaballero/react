@@ -19,6 +19,9 @@ const ItemListContainer = ({greeting}) =>{
       customFetch(products)
           .then(res=> setListproducts(res))
     },[])
+    setTimeout(()=>{
+      console.log("useEffect");
+    },2000);
   
   return(
     <>
