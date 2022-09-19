@@ -2,9 +2,8 @@
 import React from "react";
 import NavBar from "./Components/NavBar/NavBar"
 import ItemListContainer from "./Containers/ItemListContainer/ItemListContainer";
-/* import ItemCount from "./Components/ItemCount"; */
+import './index.css';
 import Swal from 'sweetalert2'
-/* import Usuarios from "./Usuarios"; */
 
 const App =() => { 
   const landing = "Dona un pedacito de Alegria a quienes mas lo necesitan";
