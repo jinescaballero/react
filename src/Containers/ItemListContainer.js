@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { products } from "./products";
-import { ItemList } from "./ItemList";
+import { products } from "../Components/products";
+import LinearProgress from '@mui/material/LinearProgress';
+import { ItemList } from "../Components/ItemList";
 
 
 export const customFetch =(products)=>{
@@ -15,16 +16,24 @@ export const customFetch =(products)=>{
 
 const ItemListContainer = ({greeting}) =>{
     const [listProducts, setListproducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
     useEffect(()=>{
       customFetch(products)
-          .then(res=> setListproducts(res))
-    },[listProducts])
-    
+          .then(res=> 
+          {
+              setLoading (false)
+              setListproducts(res)
+          })
+  },[listProducts])
+
   
   return(
     <>
       <h2>{greeting}</h2>
-      <ItemList listProducts={listProducts}/>
+      {loading ?
+    <LinearProgress color="inherit"/> : <ItemList listProducts={listProducts}/>
+    }
     </> 
 )
 

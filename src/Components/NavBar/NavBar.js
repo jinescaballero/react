@@ -30,11 +30,9 @@ const NavBar =({nombre})=>{
             justifyContent:'space-between',
             alignItems:'center',
             padding: '1%',
-            margin:'1%',
             fontSize: '130%',
             background: '#e2f0fb',
-            border: '2px solid #b2dafa',
-            borderRadius:30
+            border: '2px solid 72a0c1'
         },
         imagen:{
             width:'20%',

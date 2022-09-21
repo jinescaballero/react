@@ -15,7 +15,7 @@ export const products =[
     name: "Pañales",
     category:  "primera necesidad",
     description: "Pañales Pampers Confort Sec Extra Plus T. M 16 Un ",
-    price: 300,
+    price: 1300,
     stock: 90
 },
     {
@@ -25,6 +25,15 @@ export const products =[
         category:  "primera necesidad",
         description: "Puré De Manzana Gerber® Frasco X113gr",
         price: 1000,
+        stock: 50
+    },
+    {
+        id: 4,
+        img: "https://http2.mlstatic.com/D_NQ_NP_809444-MLA49804545149_042022-O.jpg",
+        name:"Leche Sancor Bebe",
+        category:  "primera necesidad",
+        description: "Leche Polvo /liquido Mead Johnson Bebé 500mL",
+        price: 499,
         stock: 50
     }
 

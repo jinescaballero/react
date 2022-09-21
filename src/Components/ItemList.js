@@ -4,7 +4,7 @@ import { Item } from "./Item"
 
 
 
-const ItemList = ({listProducts})=>{
+const ItemList= ({listProducts})=>{
     
     return(
         <>

@@ -7,15 +7,18 @@ import { blue } from '@mui/material/colors';
 const Item = ({product})=>{
     return(
         <>
-        <div style={ styles.card}> 
-            <img width='220' height='220' src={product?.img} alt="" />
-            <div >
-                <h3 style={styles.h3} >{product?.name}</h3>
-                <h3 style={styles.itemCard}>${product?.price}</h3>
-                <p > {product?.description}</p>
-                <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
+        
+            <div style={ styles.card}> 
+                <img width='220' height='220' src={product?.img} alt="" />
+                <div style={styles.centrar}>
+                    <h3 style={styles.h3} >{product?.name}</h3>
+                    <h3 style={styles.itemCard}>${product?.price}</h3>
+                    <p > {product?.description}</p>
+                    <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
+                    <Button variant="contained">Ver Detalle</Button>
+                </div>
+                
             </div>
-        </div>
         </>
     )
 }
@@ -28,13 +31,14 @@ const styles ={
         alignitems: 'center',
         justifycontent: 'center',
         width: '300px',
-        border: '3px solid rgb(178, 210, 255)',
-        borderRadius:10,
+        border: '3px solid rgb(211,211,211)',
+        borderRadius:5
     },
 
     img:{
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignitems:'center'
         
     },
     cardText:{
@@ -53,11 +57,15 @@ const styles ={
     },
     itemCard:{
         display: 'flex',
-        margin:'1%',
+        margin:'2%',
         justifyContent: 'center',
         width: '300px',
         background: 'rgb(226, 240, 251)',
-        borderRadius:2
+        borderRadius:5
+    },
+    centrar:{
+
+        textAlign:'center'
     },
     Symbol: {
         padding: '6%',
