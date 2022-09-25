@@ -11,7 +11,7 @@ export const products =[
    ,
    {
     id: 2,
-    img: "https://jumboargentina.vtexassets.com/arquivos/ids/700033-500-auto?v=637879018961370000&width=500&height=auto&aspect=true ",
+    img: "https://ardiaprod.vtexassets.com/arquivos/ids/219989-500-auto?v=637790490470230000&width=500&height=auto&aspect=true ",
     name: "Pañales",
     category:  "primera necesidad",
     description: "Pañales Pampers Confort Sec Extra Plus T. M 16 Un ",

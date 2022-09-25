@@ -7,7 +7,7 @@ const ItemDetail = ({producto})=>{
     return(
         <>
         <div style={ styles.card}> 
-        <img width='220' height='220' src={producto.image} alt="" />
+        <img  src={producto.image} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{producto.title}</h3>
                     <h3 style={styles.itemCard}>${producto.price}</h3>
@@ -21,13 +21,13 @@ const ItemDetail = ({producto})=>{
 }
 const styles ={
     card:{
-        display: 'inline-block',
+        display: 'flex',
         margin:'1%',
         padding:'1%',
         fontSize: '150%',
         alignitems: 'center',
         justifycontent: 'center',
-        width: '300px',
+        width: '1100px',
         border: '3px solid rgb(211,211,211)',
         borderRadius:5
     },
@@ -56,13 +56,13 @@ const styles ={
         display: 'flex',
         margin:'2%',
         justifyContent: 'center',
-        width: '300px',
-        background: 'rgb(226, 240, 251)',
+        width: '400px',
         borderRadius:5
     },
     centrar:{
 
-        textAlign:'center'
+        textAlign:'center',
+        background: 'rgb(226, 240, 251)'
     },
     Symbol: {
         padding: '6%',
