@@ -18,7 +18,7 @@ const ItemDetailContainer = ({greeting}) =>{
     useEffect(() => {
         const getItem = async () => {
             try{
-                const respuesta = await fetch ('https://fakestoreapi.com/products/8');
+                const respuesta = await fetch ('https://fakestoreapi.com/products/3');
                 const data = await respuesta.json()
                 setProducto(data);
             }

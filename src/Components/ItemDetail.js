@@ -7,7 +7,7 @@ const ItemDetail = ({producto})=>{
     return(
         <>
         <div style={ styles.card}> 
-        <img  src={producto.image} alt="" />
+        <img width='600' height='600' src={producto.image} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{producto.title}</h3>
                     <h3 style={styles.itemCard}>${producto.price}</h3>

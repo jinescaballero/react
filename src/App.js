@@ -3,7 +3,8 @@ import React from "react";
 import NavBar from "./Components/NavBar/NavBar"
 import ItemListContainer from "./Containers/ItemListContainer";
 import ItemDetailContainer from "./Containers/ItemDetailContainer";
-import './index.css';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+
 import Swal from 'sweetalert2'
 
 const App =() => { 
@@ -17,9 +18,11 @@ const App =() => {
 
   return (
     <>
-      <NavBar />
-      <ItemListContainer greeting={landing}/>
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <NavBar />
+        <ItemListContainer greeting={landing}/>
+        <ItemDetailContainer/>
+      </BrowserRouter>
       {/* <ItemCount stock={5} initial="1" onAdd={onAdd}/> */}
     </>
   )
