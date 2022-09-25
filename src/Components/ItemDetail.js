@@ -12,7 +12,7 @@ const ItemDetail = ({producto})=>{
                     <h3 style={styles.h3} >{producto.title}</h3>
                     <h3 style={styles.itemCard}>${producto.price}</h3>
                     <p > {producto.description}</p>  
-                    <Button variant="contained">Ver Detalle</Button>
+                    <Button variant="contained">Comprar</Button>
                 </div>
                 
             </div>

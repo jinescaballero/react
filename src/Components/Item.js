@@ -15,7 +15,7 @@ const Item = ({product})=>{
                     <h3 style={styles.itemCard}>${product?.price}</h3>
                     
                     <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
-                    <Button variant="contained">Comprar</Button>
+                    <Button variant="contained">Ver Detalle</Button>
                 </div>
                 
             </div>
