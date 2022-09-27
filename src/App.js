@@ -12,6 +12,7 @@ const App =() => {
   const landing = "Dona un pedacito de Alegria a quienes mas lo necesitan";
   const detail = "Caracteristicas";
 
+
  /*  const onAdd = (count) => {
     Swal.fire(`Se agregaron ${count} items al carrito`);
   } */
@@ -20,7 +21,7 @@ const App =() => {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
+        <NavBar name='Ine'/>
         <Routes>
           <Route path='/' element= {<ItemListContainer greeting={landing}/>}/>
           <Route path='categoria/:IdCategoria'element= {<ItemListContainer />}/>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const NavBar =({nombre})=>{
+const NavBar =({name})=>{
     const categorias=[
         {id:0,nombre:'Primera Necesidad', ruta:'/categoria/PrimeraNecesidad'},
         {id:1,nombre:'Alimentos', ruta:'/categoria/Alimentos'},
@@ -17,9 +17,9 @@ const NavBar =({nombre})=>{
         return(
             <header style={styles.container}>
                 <Link to={'/'}>
-                    <img style={styles.imagen} src={logo} alt="logo" />
+                    <img width='300'  src={logo} alt="logo" />
                 </Link>
-                <Link to={'/'}> <h2>Bienvenid@ {nombre}!</h2> </Link>
+                <h2>Bienvenid@ {name}!</h2> 
                 <Nav categorias={categorias}/>
                 <Link to={'/cart'}><CartWidget/></Link>
                 
@@ -34,6 +34,7 @@ const NavBar =({nombre})=>{
             justifyContent:'space-between',
             alignItems:'center',
             padding: '1%',
+            margin: '1%',
             fontSize: '130%',
             background: '#e2f0fb',
             border: '2px solid 72a0c1'
