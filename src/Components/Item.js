@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Button from '@mui/material/Button';
-import Swal from 'sweetalert2'
-import { blue } from '@mui/material/colors';
+// import Swal from 'sweetalert2'
+/* import { blue } from '@mui/material/colors'; */
+import {Link} from "react-router-dom";
 
 
 const Item = ({product})=>{
@@ -14,9 +15,10 @@ const Item = ({product})=>{
                     <h3 style={styles.h3} >{product?.name}</h3>
                     <h3 style={styles.itemCard}>${product?.price}</h3>
                     <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
-                    <Button variant="contained">Ver Detalle</Button>
+                    <Link to={`/producto/${product.id}`}>
+                    <Button variant="contained" color="success">Ver Detalle</Button>
+                </Link>
                 </div>
-                
             </div>
         </>
     )

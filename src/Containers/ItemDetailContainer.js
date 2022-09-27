@@ -1,37 +1,33 @@
 import React, { useEffect, useState } from "react";
-/* import { products } from "./products"; */
+import { products } from "../products"; 
 import LinearProgress from '@mui/material/LinearProgress';
+import { useParams } from "react-router-dom";
 import {ItemDetail}  from "../Components/ItemDetail"; 
 
-/* export const customFetch =(products)=>{
+export const customFetch =(products,id)=>{
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
-            resolve(products)
+            const product = products.find((product) => product.id === id)
+            resolve(product)
         },2000) 
 })
-} */
+} 
 
 const ItemDetailContainer = ({greeting}) =>{
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
+    let {IdProducto} = useParams();
 
-    useEffect(() => {
-        const getItem = async () => {
-            try{
-                const respuesta = await fetch ('https://fakestoreapi.com/products/3');
-                const data = await respuesta.json()
-                setProducto(data);
-            }
-            catch{
-            console.err("un error");
-            }
-            finally {
-                setLoading(false)
-            }
-        }
+    useEffect(()=>{
+        customFetch(products, parseInt(IdProducto))
+            .then(resolve=> 
+            {
+                setLoading (false)
+                setProducto(resolve);
 
-        getItem();
-},[])
+            })
+    },[IdProducto]);
+
 
     return(
         <>

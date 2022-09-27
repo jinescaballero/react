@@ -16,25 +16,21 @@ export const customFetch =(products)=>{
 
 const ItemListContainer = ({greeting}) =>{
   let{IdCategoria}=useParams();
-/*   console.log(`products.${IdCategoria}`);
-  console.log(`products/${IdCategoria}`);
-  console.log(products => products.IdCategoria === IdCategoria); */
-/*   console.log(products.categoria === IdCategoria); */
-  /* console.log(products === IdCategoria); */
- /*  console.log(`products${IdCategoria}`); */
-/*   console.log(`products:${IdCategoria}`); */
-console.log(`products.${IdCategoria}`);
-
-
-    const [listProducts, setListproducts] = useState([true])
+    const [listProducts, setListproducts] = useState([])
     const [loading, setLoading] = useState({});
     useEffect(() => {
-      const url = IdCategoria ? `products.${IdCategoria}`: products;    
-        customFetch (url) 
+        customFetch (products) 
         .then (res=> 
           {
-            setLoading(false)
-            setListproducts(res)
+            if (IdCategoria) {
+              setLoading(false)
+              setListproducts(res.filter(products=>products.categoria === IdCategoria))
+            } else{
+              setLoading(false)
+              setListproducts(res)
+            }
+            
+            
           })
     }, [IdCategoria]);
 

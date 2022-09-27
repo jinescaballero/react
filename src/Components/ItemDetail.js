@@ -7,12 +7,12 @@ const ItemDetail = ({producto})=>{
     return(
         <>
         <div style={ styles.card}> 
-        <img width='600' height='600' src={producto.image} alt="" />
+        <img width='600' height='600' src={producto.img} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{producto.title}</h3>
                     <h3 style={styles.itemCard}>${producto.price}</h3>
                     <p > {producto.description}</p>  
-                    <Button variant="contained">Comprar</Button>
+                    <Button variant="contained">Add to Cart</Button>
                 </div>
                 
             </div>
