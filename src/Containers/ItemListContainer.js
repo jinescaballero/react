@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../Components/products";
+import { products } from "../products";
 import LinearProgress from '@mui/material/LinearProgress';
 import { ItemList } from "../Components/ItemList";
-
+import {useParams} from "react-router-dom";
 
 export const customFetch =(products)=>{
   return new Promise((resolve, reject) => {
@@ -15,17 +15,28 @@ export const customFetch =(products)=>{
 }
 
 const ItemListContainer = ({greeting}) =>{
-    const [listProducts, setListproducts] = useState([])
-    const [loading, setLoading] = useState(true)
+  let{IdCategoria}=useParams();
+/*   console.log(`products.${IdCategoria}`);
+  console.log(`products/${IdCategoria}`);
+  console.log(products => products.IdCategoria === IdCategoria); */
+/*   console.log(products.categoria === IdCategoria); */
+  /* console.log(products === IdCategoria); */
+ /*  console.log(`products${IdCategoria}`); */
+/*   console.log(`products:${IdCategoria}`); */
+console.log(`products.${IdCategoria}`);
 
-    useEffect(()=>{
-      customFetch(products)
-          .then(res=> 
+
+    const [listProducts, setListproducts] = useState([true])
+    const [loading, setLoading] = useState({});
+    useEffect(() => {
+      const url = IdCategoria ? `products.${IdCategoria}`: products;    
+        customFetch (url) 
+        .then (res=> 
           {
-              setLoading (false)
-              setListproducts(res)
+            setLoading(false)
+            setListproducts(res)
           })
-  },[listProducts])
+    }, [IdCategoria]);
 
   
   return(

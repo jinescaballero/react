@@ -13,7 +13,6 @@ const Item = ({product})=>{
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{product?.name}</h3>
                     <h3 style={styles.itemCard}>${product?.price}</h3>
-                    
                     <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
                     <Button variant="contained">Ver Detalle</Button>
                 </div>
@@ -30,7 +29,8 @@ const styles ={
         fontSize: '150%',
         alignitems: 'center',
         justifycontent: 'center',
-        width: '300px',
+        width: '350px',
+        heigth: '350px',
         border: '3px solid rgb(211,211,211)',
         borderRadius:5
     },

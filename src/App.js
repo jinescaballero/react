@@ -1,6 +1,7 @@
 
 import React from "react";
 import NavBar from "./Components/NavBar/NavBar"
+import {Cart} from "./Containers/CartView/Cart";
 import ItemListContainer from "./Containers/ItemListContainer";
 import ItemDetailContainer from "./Containers/ItemDetailContainer";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
@@ -20,8 +21,12 @@ const App =() => {
     <>
       <BrowserRouter>
         <NavBar />
-        <ItemListContainer greeting={landing}/>
-        <ItemDetailContainer/>
+        <Routes>
+          <Route path='/' element= {<ItemListContainer greeting={landing}/>}/>
+          <Route path='categoria/:IdCategoria'element= {<ItemListContainer />}/>
+          <Route path='producto/:IdProducto' element= {<ItemDetailContainer />}/>
+          <Route path='/cart' element={<Cart />}/>
+        </Routes>
       </BrowserRouter>
       {/* <ItemCount stock={5} initial="1" onAdd={onAdd}/> */}
     </>

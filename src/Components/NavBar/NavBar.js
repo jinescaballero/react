@@ -2,23 +2,27 @@ import React from 'react'
 import logo from '../../assets/logo.jpeg'
 import CartWidget from '../CartWidget/CartWidget';
 import { Nav } from './Nav/Nav';
+import { Link } from 'react-router-dom';
 
 
 
 const NavBar =({nombre})=>{
     const categorias=[
-        {id:0,nombre:'Primera Necesidad'},
-        {id:1,nombre:'Alimentos'},
-        {id:2,nombre:'Ropa'},
-        {id:3,nombre:'Dinero'},
+        {id:0,nombre:'Primera Necesidad', ruta:'/categoria/PrimeraNecesidad'},
+        {id:1,nombre:'Alimentos', ruta:'/categoria/Alimentos'},
+        {id:2,nombre:'Ropa', ruta:'/categoria/Ropa'},
+        {id:3,nombre:'Dinero', ruta:'/categoria/Dinero'},
     ]
     
         return(
             <header style={styles.container}>
-                <img style={styles.imagen} src={logo} alt="logo" />
-                <h2>Bienvenid@ {nombre}!</h2>
+                <Link to={'/'}>
+                    <img style={styles.imagen} src={logo} alt="logo" />
+                </Link>
+                <Link to={'/'}> <h2>Bienvenid@ {nombre}!</h2> </Link>
                 <Nav categorias={categorias}/>
-                <CartWidget/>
+                <Link to={'/cart'}><CartWidget/></Link>
+                
             </header>
         )
     }
@@ -33,6 +37,10 @@ const NavBar =({nombre})=>{
             fontSize: '130%',
             background: '#e2f0fb',
             border: '2px solid 72a0c1'
+        },
+        links:{
+            display:'flex'
+            
         },
         imagen:{
             width:'20%',
