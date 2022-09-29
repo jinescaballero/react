@@ -1,18 +1,28 @@
 import React from 'react'
-import Button from '@mui/material/Button';
-
+// import Button from '@mui/material/Button';
+import  ItemCount  from './ItemCount';
+import { useState } from 'react';
+import {Link} from "react-router-dom";
 
 
 const ItemDetail = ({producto})=>{
+    const [irAlCarrito, setIrAlCarrito] = useState (false); 
+    const onAdd = () => {setIrAlCarrito(true)};
+
     return(
         <>
         <div style={ styles.card}> 
         <img width='600' height='600' src={producto.img} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{producto.name}</h3>
-                    <h3 style={styles.itemCard}>Precio:${producto.price}</h3>
-                    <p > {producto.description}</p>  
-                    <Button variant="contained">Add to Cart</Button>
+                    <p > {producto.description}</p> 
+                    <h4 style={styles.itemCard}>Precio: {"$"+producto.price}</h4>
+                    {
+                        irAlCarrito
+                        ? <Link to='/cart'><button>Finalizar Compra</button></Link>
+                        :<ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
+                    } 
+                    <h4> Stock: {producto.stock}</h4>
                 </div>
                 
             </div>
@@ -27,7 +37,7 @@ const styles ={
         fontSize: '150%',
         alignitems: 'center',
         justifycontent: 'center',
-        width: '1100px',
+        width: '1200px',
         border: '3px solid rgb(211,211,211)',
         borderRadius:5
     },
@@ -56,19 +66,15 @@ const styles ={
         display: 'flex',
         margin:'2%',
         justifyContent: 'center',
-        width: '400px',
+        width: '600px',
         borderRadius:5
     },
     centrar:{
 
         textAlign:'center',
         background: 'rgb(226, 240, 251)'
-    },
-    Symbol: {
-        padding: '6%',
-    },
-    
+    }
 }
 
 
-export {ItemDetail}
+export default ItemDetail

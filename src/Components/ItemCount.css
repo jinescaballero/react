@@ -1,0 +1,20 @@
+.itemListContainer {
+    display: inline-block;
+    align-items:center;
+    justify-content: center;
+    padding: 1%;
+    margin:1%;
+    font-size: 150%;
+    width: 400px;
+    border-radius:10px;
+}
+.itemCard{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+button{
+    padding: 5px;
+    margin: 8px;
+}
