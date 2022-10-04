@@ -1,18 +1,24 @@
-import React from 'react'
-// import Button from '@mui/material/Button';
-import  ItemCount  from './ItemCount';
-import { useState } from 'react';
-import {Link} from "react-router-dom";
+import React from "react";
+import ItemCount from "./ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../Context/CartContext";
+import "toastify-js/src/toastify.css";
 
+export const ItemDetail = ({producto})=>{
 
-const ItemDetail = ({producto})=>{
     const [irAlCarrito, setIrAlCarrito] = useState (false); 
-    const onAdd = () => {setIrAlCarrito(true)};
+
+    const { addItem } = useCartContext();
+    const onAdd = (cantidad) => {
+        setIrAlCarrito(true);
+        addItem(producto, cantidad);
+    };
 
     return(
         <>
         <div style={ styles.card}> 
-        <img width='600' height='600' src={producto.img} alt="" />
+        <img width='400px' height='400px' src={producto.img} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{producto.name}</h3>
                     <p > {producto.description}</p> 

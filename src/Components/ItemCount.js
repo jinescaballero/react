@@ -3,15 +3,22 @@ import {useState} from 'react'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'; */
 import Button from '@mui/material/Button';
 import "./ItemCount.css";
-/* import Swal from 'sweetalert2'  */
+import Swal from 'sweetalert2' 
 
 const ItemCount =({stock,initial,onAdd}) => {
     const [contador, setContador] = useState (initial);
+    const sumar =() => {
 
-    const sumar = () => contador < stock && setContador (contador + 1);
+        (stock - contador) > 0 ? setContador(contador + 1) : Swal.fire(`No hay mas stock!`);
+        
+    }
 
-    const restar = () => contador > initial && setContador (contador -1)
-
+    const restar =() => {
+        (contador) > 1 ? setContador(contador - 1) : Swal.fire(`Al menos debe haber un ítem para agregar!`);
+    }
+    const agregar =() => { onAdd(contador);
+        Swal.fire(`Se agregaron ${contador} al carrito`);
+    }
     return (
     <> 
         <div className="itemListContainer"> 
@@ -20,7 +27,7 @@ const ItemCount =({stock,initial,onAdd}) => {
                 <h3>{contador}</h3>
                 <button onClick={sumar}>+</button>
             </div>
-            <Button onClick={onAdd} variant="contained">Add to Cart</Button>
+            <Button onClick={agregar} variant="contained">Add to Cart</Button>
         </div>
     </>
     )      

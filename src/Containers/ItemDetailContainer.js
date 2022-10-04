@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { products } from "../products"; 
 import LinearProgress from '@mui/material/LinearProgress';
 import { useParams } from "react-router-dom";
-import ItemDetail  from "../Components/ItemDetail"; 
+import { ItemDetail } from "../Components/ItemDetail"; 
 
 export const customFetch =(products,id)=>{
     return new Promise((resolve, reject) => {

@@ -70,5 +70,59 @@ export const products =[
         description: "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
         price: 5500,
         stock: 10
+    },
+    {
+        id: 9,
+        img: "https://pureza.com.ar/wp-content/uploads/2019/06/3D_PZA-HNA-LEVADURA-PIZZA_FTE-web.png",
+        name:" Harina con Levadura. Especial para Pizzas Caseras",
+        categoria:  "Alimentos",
+        description: "Con Harina Pureza con Levadura hacer pizzas caseras nunca fue tan fácil y práctico, ya que viene con la dosificación exacta de levadura.",
+        price: 170,
+        stock: 100
+    },
+    {
+        id: 10,
+        img: "https://pureza.com.ar/wp-content/uploads/2019/06/Pureza_0000_UR_1kg_VIT-D-1.png",
+        name:" Harina Pureza 0000 Ultra Refinada",
+        categoria:  "Alimentos",
+        description: "Hecha de trigos cuidadosamente seleccionados, cuyas sémolas son tratadas en un proceso especial de filtrado de 12 tamices entelados con sedas suizas de óptima calidad y resistencia. De allí se seleccionan las partículas más finas y pequeñas que luego llegan a las mesas argentinas.",
+        price: 160,
+        stock: 100
+    },
+    {
+        id: 11,
+        img: "https://jumboargentina.vteximg.com.br/arquivos/ids/645178-1000-1000/Lentejas-La-Espa-ola-Gourmet-400-Gr-1-28214.jpg?v=637578552987870000",
+        name:" Lentejas La Española Gourmet 400 Gr",
+        categoria:  "Alimentos",
+        description: "La lenteja constituye una saludable fuente de energía y de proteínas para el organismo, al que además aporta abundantes minerales y vitaminas.",
+        price: 180,
+        stock: 100
+    },
+    {
+        id: 13,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWiQ8TYKSl0sdvJ1sDK6DL5JtgJWDDPngssNyQDhWrFnLafOlqmd8NXSyJnUxgR2pY6jk&usqp=CAU",
+        name:"Voucher $15000",
+        categoria:  "Dinero",
+        description: "Con la compra de este vocuher sera entregado $15000 a la ONG que elija",
+        price: 15000,
+        stock: 100
+    },
+    {
+        id: 14,
+        img: "https://image.shutterstock.com/image-illustration/gold-gift-card-bow-ribbon-260nw-1252629514.jpg",
+        name:"Voucher $10000",
+        categoria:  "Dinero",
+        description: "Con la compra de este vocuher sera entregado $10000 a la ONG que elija",
+        price: 10000,
+        stock: 100
+    },
+    {
+        id: 15,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHqmSB5ArEzJnGoqGEq0Q0yok4-PYCA4yWy9JQhK-9Hg7oHS5Xtr_Wxy1F88L8vcqgJQ&usqp=CAU",
+        name:" Voucher $5000",
+        categoria:  "Dinero",
+        description: "Con la compra de este vocuher sera entregado $5000 a la ONG que elija.",
+        price: 5000,
+        stock: 100
     }
 ]

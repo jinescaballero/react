@@ -10,7 +10,7 @@ const Item = ({product})=>{
         <>
         
             <div style={ styles.card}> 
-                <img width='220' height='220' src={product?.img} alt="" />
+                <img width='300' src={product?.img} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{product?.name}</h3>
                     <h3 style={styles.itemCard}>${product?.price}</h3>
@@ -32,7 +32,7 @@ const styles ={
         alignitems: 'center',
         justifycontent: 'center',
         width: '350px',
-        heigth: '350px',
+        heigth:'350px',
         border: '3px solid rgb(211,211,211)',
         borderRadius:5
     },
