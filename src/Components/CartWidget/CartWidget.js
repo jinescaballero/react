@@ -7,10 +7,10 @@ export const CartWidget = () => {
     const { totalProd } = useCartContext("");
     return (
         <>
-          <CartWCon>
-            <CartProducts>{totalProd() || ""}</CartProducts>
-            <ShoppingCartIcon fontSize="large" sx={{ color: "#ffffff" }} />
-          </CartWCon>
+            <CartWCon>
+                <CartProducts>{totalProd() || ""}</CartProducts>
+                <ShoppingCartIcon fontSize="x-large" sx={{ color: "#ffffff" }} />
+            </CartWCon>
         </>
       );
     };
