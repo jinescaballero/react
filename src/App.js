@@ -25,7 +25,6 @@ const App =() => {
           </Routes>
         </CustomProvider>
       </BrowserRouter>
-      {/* <ItemCount stock={5} initial="1" onAdd={onAdd}/> */}
     </>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { products } from "../products"; 
 import LinearProgress from '@mui/material/LinearProgress';
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../Components/ItemDetail"; 
@@ -23,13 +22,6 @@ const ItemDetailContainer = ({greeting}) =>{
     let {IdProducto} = useParams();
 
     useEffect(()=>{
-        // customFetch(products, parseInt(IdProducto))
-        //     .then(resolve=> 
-        //     {
-        //         setLoading (false)
-        //         setProducto(resolve);
-
-        //     })
         const productosCollection = collection(db, 'products');
         const refDoc = doc(productosCollection, IdProducto);
         getDoc(refDoc)

@@ -33,7 +33,6 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
-  console.log("Cart de CartContext:", cart);
 
   //Eliminar item
   const removeItem = (id) => {

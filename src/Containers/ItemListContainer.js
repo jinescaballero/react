@@ -23,28 +23,11 @@ const ItemListContainer = ({greeting}) =>{
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        // customFetch (products) 
-        // .then (res=> 
-        //   {
-        //     if (IdCategoria) {
-        //       setLoading(false)
-        //       setListproducts(res.filter(products=>products.categoria === IdCategoria))
-        //     } else{
-        //       setLoading(false)
-        //       setListproducts(res)
-        //     }
-            
-            
-        //   })
        //Firebase
-
         let productosCollection = collection(db, 'products');
-
         if(IdCategoria){
             productosCollection = query(productosCollection, where('categoria', '==', IdCategoria))
         }
-
-
         getDocs(productosCollection)
         .then((data)=>{
             const listaProductos = data.docs.map((producto)=>{

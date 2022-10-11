@@ -1,7 +1,5 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-// import Swal from 'sweetalert2'
-/* import { blue } from '@mui/material/colors'; */
 import {Link} from "react-router-dom";
 
 
