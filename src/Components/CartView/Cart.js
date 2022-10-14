@@ -5,9 +5,14 @@ import { useCartContext } from "../../Context/CartContext";
 import { ItemCart } from "./ItemCart.js";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
+// import { db} from "../firebase/firebae";
+// import {collection, addDoc, serverTimestamp} from "firebase/firestore";
+// import Context from "@mui/base/TabsUnstyled/TabsContext";
+
 
 export const Cart = () => {
-    const { cart, totalPrice } = useCartContext();
+    const { cart, totalPrice,clear } = useCartContext();
+
 
 if (cart.length === 0) {
     return (
@@ -25,18 +30,25 @@ if (cart.length === 0) {
 return (
     <>
     <div style={styles.carrito}>
-        <Link to="/">
-        <Button variant="contained">Añadir mas Productos</Button>
-        </Link>
+        
         {cart.map((product) => (
         <ItemCart key={product.id} product={product} />
         ))}
-        <h2>Total a abonar: {totalPrice()}</h2>
+        <div style={styles.finalContenedor}>
+            <Button width='100px'variant="contained" onClick={() => clear()}>Limpiar carrito</Button>
+            <Link to="/">
+                <Button height='300px' width='300px' variant="contained">Añadir Productos</Button>
+            </Link>
+            <Link to="/form">
+                <Button variant="contained" >Pagar Carrito</Button>
+                {/* <button>Pagar</button> */}
+            </Link>
+            <div style={styles.total}>Total a abonar: {totalPrice()}</div>
+        </div>
     </div>
     </>
 );
 };
-
 
 const styles ={
     container:{
@@ -51,7 +63,7 @@ const styles ={
     },
     carrito:{
         display: 'flex',
-        width: '500px',
+        width: '800px',
         flexDirection: 'column',
         justifyContent:'center',
         alignItems:'center',
@@ -61,5 +73,25 @@ const styles ={
         fontSize: '130%',
         borderRadius:10,
         border: '2px solid #6c757d'
-}
+},
+    finalContenedor:{
+        display: 'flex',
+        alignItems: 'center',
+        margin: '5px',
+        padding: '1%',
+        button: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+    }
+},
+    total:{
+        display: 'inline-block',
+        justifyItems: 'center',
+        alignItems: 'center',
+        flexdirection: 'column',
+        fontSize: '30px',
+        fontWeight: 'bold',
+        paddingLeft:' 20px'
+    }
 }
