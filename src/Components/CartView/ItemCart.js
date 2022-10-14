@@ -30,6 +30,7 @@ const ItemClass = styled.div`
     background-color: 'lightgrey';
     justify-content: center;
     padding: 20px;
+    width:300px;
     border-radius: 20px;
 } 
 .item {
