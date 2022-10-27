@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import { useCartContext } from "../../../Context/CartContext";
+import Swal from 'sweetalert2';
+import Button from '@mui/material/Button';
 
 export const SalesForm = () => {
   const { cart, totalPrice, clear } = useCartContext();
@@ -29,9 +31,17 @@ export const SalesForm = () => {
       date: serverTimestamp(),
       total,
     }).then((res) => {
-      console.log(res.id);
       clear();
+        Swal.fire({
+        title: 'Gracias por tu Compra!',
+        icon: 'success',
+        html:
+        '<a href="/">Seguir Comprando</a> ',
+        showConfirmButton:false
+        
+    }) 
     });
+  
   };
 
   return (
@@ -76,7 +86,7 @@ export const SalesForm = () => {
             placeholder="Departamento"
             onChange={handleOnChange}
           />
-          <button>Finalizar Compra</button>
+              <Button onClick={finalSale} height='300px' width='300px' variant="contained">Finalizar Compra</Button>
         </form>
       </div>
     </>

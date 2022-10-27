@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../Context/CartContext";
 import "toastify-js/src/toastify.css";
+import Button from '@mui/material/Button';
 
 export const ItemDetail = ({producto})=>{
 
@@ -25,7 +26,7 @@ export const ItemDetail = ({producto})=>{
                     <h4 style={styles.itemCard}>Precio: {"$"+producto.price}</h4>
                     {
                         irAlCarrito
-                        ? <Link to='/cart'><button>Finalizar Compra</button></Link>
+                        ? <Link to='/cart'><Button variant="contained">Ver Carrito</Button></Link>
                         :<ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
                     } 
                     <h4> Stock: {producto.stock}</h4>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useCartContext } from "../../Context/CartContext";
 import styled from "styled-components"; 
+import Button from '@mui/material/Button';
 
 export const ItemCart = ({ product }) => {
     const { removeItem } = useCartContext();
@@ -14,9 +15,7 @@ return (
                 <p>Cantidad: {product.cantidad}</p>
                 <p>Precio unitario: $ {product.price}</p>
                 <p>Subtotal: ${product.cantidad * product.price}</p>
-                <button onClick={() => removeItem(product.id)}>
-                Eliminar Producto
-                </button>
+                <Button onClick={() => removeItem(product.id)} variant="outlined" >Eliminar Producto</Button>
             </div>
         </ItemClass> 
     </>

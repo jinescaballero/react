@@ -9,7 +9,7 @@ export const CartWidget = () => {
         <>
             <CartWCon>
                 <CartProducts>{totalProd() || ""}</CartProducts>
-                <ShoppingCartIcon fontSize="x-large" sx={{ color: "#ffffff" }} />
+                <ShoppingCartIcon fontSize="large" sx={{ color: "#ffffff" }} />
             </CartWCon>
         </>
       );

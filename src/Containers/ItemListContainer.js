@@ -7,17 +7,16 @@ import { db } from "../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
 export const customFetch =(products)=>{
-  return new Promise((resolve, reject) => {
-      setTimeout(()=>{
-          resolve(products)
-      },2000)
-      
-  })
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(products)
+        },2000)     
+})
 
 }
 
 const ItemListContainer = ({greeting}) =>{
-  let{IdCategoria}=useParams();
+    let{IdCategoria}=useParams();
     const [listProducts, setListproducts] = useState([])
     const [loading, setLoading] = useState({});
     const [error, setError] = useState(false);
@@ -48,16 +47,15 @@ const ItemListContainer = ({greeting}) =>{
         ) 
     }, [IdCategoria]);
 
-  
-  return(
+return(
     <>
-      <h2>{greeting}</h2>
-      {loading ?
-    <LinearProgress color="inherit"/>
-    : error ?
-    <h2>Ocurrio un error!</h2>
-    : <ItemList listProducts={listProducts}/>
-    }
+        <h2>{greeting}</h2>
+        {loading ?
+        <LinearProgress color="inherit"/>
+        : error ?
+        <h2>Ocurrio un error!</h2>
+        : <ItemList listProducts={listProducts}/>
+        }
     </> 
 )
 

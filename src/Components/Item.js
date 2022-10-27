@@ -14,7 +14,7 @@ const Item = ({product})=>{
                     <h3 style={styles.itemCard}>${product?.price}</h3>
                     <h4 style={styles.itemCard}>Stock: {product?.stock}</h4>
                     <Link to={`/producto/${product.id}`}>
-                    <Button variant="contained" color="success">Ver Detalle</Button>
+                    <Button variant="contained" >Ver Detalle</Button>
                 </Link>
                 </div>
             </div>

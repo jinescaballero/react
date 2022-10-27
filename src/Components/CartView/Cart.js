@@ -5,9 +5,6 @@ import { useCartContext } from "../../Context/CartContext";
 import { ItemCart } from "./ItemCart.js";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-// import { db} from "../firebase/firebae";
-// import {collection, addDoc, serverTimestamp} from "firebase/firestore";
-// import Context from "@mui/base/TabsUnstyled/TabsContext";
 
 
 export const Cart = () => {
@@ -17,7 +14,7 @@ export const Cart = () => {
 if (cart.length === 0) {
     return (
         <>
-            <div style={styles.container}> 
+            <div style={styles.empty}> 
                 <h4>Aun no agregaste productos al carrito </h4>
                 <img width='400'  src={emptycart} alt="emptycart" />
                 <Link to="/">
@@ -35,15 +32,16 @@ return (
         <ItemCart key={product.id} product={product} />
         ))}
         <div style={styles.finalContenedor}>
+            <Link style={styles.link} to="/">
             <Button width='100px'variant="contained" onClick={() => clear()}>Limpiar carrito</Button>
-            <Link to="/">
-                <Button height='300px' width='300px' variant="contained">Añadir Productos</Button>
             </Link>
-            <Link to="/form">
+            <Link style={styles.link} to="/">
+            <Button height='300px' width='300px' variant="contained">Añadir Productos</Button>
+            </Link>
+            <Link style={styles.link} to="/form">
                 <Button variant="contained" >Pagar Carrito</Button>
-                {/* <button>Pagar</button> */}
             </Link>
-            <div style={styles.total}>Total a abonar: {totalPrice()}</div>
+            <div style={styles.total}>Total a abonar: ${totalPrice()}</div>
         </div>
     </div>
     </>
@@ -51,7 +49,7 @@ return (
 };
 
 const styles ={
-    container:{
+    empty:{
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'center',
@@ -93,5 +91,8 @@ const styles ={
         fontSize: '30px',
         fontWeight: 'bold',
         paddingLeft:' 20px'
+    },
+    link:{
+        margin:'10px'
     }
 }
