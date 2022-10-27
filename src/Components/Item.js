@@ -6,9 +6,8 @@ import {Link} from "react-router-dom";
 const Item = ({product})=>{
     return(
         <>
-        
             <div style={ styles.card}> 
-                <img width='300' src={product?.img} alt="" />
+                <img style={ styles.img} src={product?.img} alt="" />
                 <div style={styles.centrar}>
                     <h3 style={styles.h3} >{product?.name}</h3>
                     <h3 style={styles.itemCard}>${product?.price}</h3>
@@ -38,7 +37,10 @@ const styles ={
     img:{
         display: 'flex',
         justifyContent: 'center',
-        alignitems:'center'
+        alignitems:'center',
+        height:'250px',
+        marginLeft:'auto',
+        marginRight:'auto'
         
     },
     cardText:{

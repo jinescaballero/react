@@ -50,37 +50,37 @@ export const SalesForm = () => {
       <h2>Ingrese sus datos para realizar el envio</h2>
       <div>
         <form onSubmit={finalSale}>
-          <input
+          <input style={styles.input}
             name="name"
             type="name"
             placeholder="Nombre"
             onChange={handleOnChange}
           />
-          <input
+          <input style={styles.input}
             name="surname"
             type="family-name"
             placeholder="Apellido"
             onChange={handleOnChange}
           />
-          <input
+          <input style={styles.input}
             name="email"
             type="email"
             placeholder="Email"
             onChange={handleOnChange}
           />
-          <input
+          <input style={styles.input}
             name="phone"
             type="tel"
             placeholder="Telefono"
             onChange={handleOnChange}
           />
-          <input
+          <input style={styles.input}
             name="adress"
             type="street-address"
             placeholder="Direccion"
             onChange={handleOnChange}
           />
-          <input
+          <input style={styles.input}
             name="flat"
             type="text"
             placeholder="Departamento"
@@ -92,3 +92,16 @@ export const SalesForm = () => {
     </>
   );
 };
+
+const styles ={
+  input:{
+    display: 'inline',
+    flexDirection: 'column',
+    justifyContent:'center',
+    alignItems:'center',
+    marginTop: '10px',
+    padding: '1%',
+    margin: '1%',
+    borderRadius:'5px'
+  }
+}
