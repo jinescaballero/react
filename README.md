@@ -6,4 +6,4 @@ Para iniciarlo
 
 Primero ejecuta la terminal: npm start
 
-abra [http:/localhost:3000] con su navegador para ver la página.
+abrir [http:/localhost:3000] con su navegador para ver la página.

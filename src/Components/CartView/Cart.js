@@ -1,5 +1,4 @@
 import React from "react";
-import "./Cart.css";
 import emptycart from "../../assets/carritovacio.png";
 import { useCartContext } from "../../Context/CartContext";
 import { ItemCart } from "./ItemCart.js";
@@ -94,5 +93,11 @@ const styles ={
     },
     link:{
         margin:'10px'
+    },
+    cart:{
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: '20px',
+        marginTop: '200px'
     }
 }
